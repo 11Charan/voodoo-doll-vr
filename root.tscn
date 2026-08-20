@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://b73t0ixlpfdhh"]
+
+[ext_resource type="PackedScene" uid="uid://je08d0aqht44" path="res://Assets/Models/Pot/cauldron_3d_enchanted.glb" id="1_huihk"]
+[ext_resource type="PackedScene" uid="uid://byrrsohfrwgfo" path="res://Assets/Models/Hospital Bed/hospital_bed.glb" id="1_qw60f"]
+[ext_resource type="PackedScene" uid="uid://v86234qa1c8p" path="res://Assets/Models/Ghost/horror_ghost_character_-_blood_stained_spirit.glb" id="1_sq7yr"]
+[ext_resource type="Script" uid="uid://bo6xgjaxlg06g" path="res://Scripts/VRSetup.gd" id="1_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://dm30aj3n2vsdu" path="res://Assets/Models/Candle/candles.glb" id="1_ynlg5"]
+[ext_resource type="Script" uid="uid://coqs8b2egagmf" path="res://Scripts/RightHand.gd" id="2_28aoi"]
+[ext_resource type="PackedScene" uid="uid://umeupboo5m5x" path="res://Assets/Models/Stand/horror_night_stand.glb" id="2_ab83r"]
+[ext_resource type="Script" uid="uid://dsi51qsrolasi" path="res://Scripts/LeftHand.gd" id="2_jnlp7"]
+[ext_resource type="PackedScene" uid="uid://dy5885aabv864" path="res://Assets/Models/Frames/horror_frame.glb" id="2_r3r3k"]
+[ext_resource type="PackedScene" uid="uid://cd123hgw40b1a" path="res://Assets/Models/Table/old_wooden_dinner_table.glb" id="3_1xb4a"]
+[ext_resource type="Script" uid="uid://c0w16prphfw66" path="res://Scripts/Pointer.gd" id="3_jnlp7"]
+[ext_resource type="PackedScene" uid="uid://iy6hw4l01gxo" path="res://Assets/Models/Crib/ps1_horror_hospital_crib.glb" id="4_0dnjj"]
+[ext_resource type="PackedScene" uid="uid://f3ibsm7q4mf2" path="res://cube.tscn" id="5_bf3um"]
+[ext_resource type="PackedScene" uid="uid://diyvoc6tnl7jd" path="res://capsule.tscn" id="6_huihk"]
+[ext_resource type="PackedScene" uid="uid://sd7n55tjau4o" path="res://cylinder.tscn" id="7_tw3kd"]
+[ext_resource type="Texture2D" uid="uid://c4dg4nj5c4gmd" path="res://Assets/Textures/Floor/textures/plank_flooring_04_diff_4k.jpg" id="9_gd4vy"]
+[ext_resource type="PackedScene" uid="uid://v0fpmmybh541" path="res://Assets/Models/Walls/stone_wall_scan.glb" id="10_tw3kd"]
+[ext_resource type="Script" uid="uid://chqswuvjf35pa" path="res://Scripts/HelpText.gd" id="12_help"]
+[ext_resource type="PackedScene" uid="uid://ci5mj3l33tm7w" path="res://Assets/Models/Wheelchair/re_wheelchair_horror_game_hospital.glb" id="15_blcw0"]
+[ext_resource type="PackedScene" uid="uid://032lop838vii" path="res://Assets/Models/Doll/horror_doll.glb" id="16_50g4q"]
+[ext_resource type="PackedScene" uid="uid://mj76qsf501u2" path="res://Assets/Models/Paintings/horror_paintings_-_zdzislaw_beksinski.glb" id="21_uwexw"]
+[ext_resource type="PackedScene" uid="uid://dbxi0hifrjtby" path="res://Assets/Models/Table Contents/horror_kitchen_scene.glb" id="22_8pgb7"]
+[ext_resource type="PackedScene" uid="uid://bbvsj6ga0rmp" path="res://Assets/Models/ToyChest/horror_toy_chest.glb" id="23_tilu5"]
+[ext_resource type="PackedScene" uid="uid://bqm2esfdfhvgn" path="res://Assets/Models/Roof/iron_roof_model.glb" id="24_24xe2"]
+[ext_resource type="AudioStream" uid="uid://dnva02oe43u8w" path="res://Assets/Audio/House of Horror - Experia.mp3" id="25_ab83r"]
+
+[sub_resource type="Environment" id="Environment_workshop"]
+background_mode = 1
+background_color = Color(0.055, 0.07, 0.11, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.55, 0.65, 0.9, 1)
+ambient_light_energy = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pointer"]
+shading_mode = 0
+albedo_color = Color(0.2, 0.9, 1, 0.8)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l8v81"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_28aoi"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jnlp7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tw3kd"]
+albedo_texture = ExtResource("9_gd4vy")
+roughness = 0.35
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_huihk"]
+size = Vector3(0.75, 0.025, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tw3kd"]
+size = Vector3(1.5, 0.05, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_huihk"]
+albedo_color = Color(0.5686275, 0.24705882, 0.05882353, 1)
+
+[node name="Root" type="Node3D" unique_id=276273841]
+
+[node name="Sketchfab_Scene17" parent="." unique_id=1547300967 instance=ExtResource("1_ynlg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0769777, 0.72643065, 0)
+
+[node name="Sketchfab_Scene15" parent="." unique_id=1173945295 instance=ExtResource("2_ab83r")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -4.287881, -0.1696037, 3.7908132)
+
+[node name="Sketchfab_Scene13" parent="." unique_id=150404772 instance=ExtResource("3_1xb4a")]
+transform = Transform3D(-0.0028121735, 0, -0.36195228, 0, 0.20500003, 0, 0.27174503, 0, -0.0037456902, 4.380441, -0.009249985, 2.75773)
+
+[node name="Sketchfab_Scene11" parent="." unique_id=1850783892 instance=ExtResource("4_0dnjj")]
+transform = Transform3D(0.00026537478, 0, 1, 0, 1, 0, -1, 0, 0.00026537478, 0, 0, 4.531807)
+
+[node name="Sketchfab_Scene10" parent="." unique_id=131477488 instance=ExtResource("1_sq7yr")]
+transform = Transform3D(-0.77684796, 0, 0.8274855, 0, 1.135, 0, -0.8274855, 0, -0.77684796, -2.9570527, 0.4511788, -3.0346878)
+
+[node name="Sketchfab_Scene9" parent="." unique_id=963418996 instance=ExtResource("2_r3r3k")]
+transform = Transform3D(0.24662435, 0, 20.82854, 0, 20.829998, 0, -20.82854, 0, 0.24662435, 4.3462687, 0.6056038, -4.612208)
+
+[node name="Sketchfab_Scene6" parent="." unique_id=1524695276 instance=ExtResource("1_qw60f")]
+transform = Transform3D(0.014415236, 0, -0.00014737065, 0, 0.006162927, 0, 0.00013627793, 0, 0.015588608, -3.0283756, -0.005319357, 3.7388563)
+
+[node name="Sketchfab_Scene" parent="." unique_id=75672381 instance=ExtResource("1_huihk")]
+transform = Transform3D(0.27437806, 0, 0, 0, 0.24836676, 0, 0, 0, 0.26662177, -3.5552597, 0.037670612, -3.6579928)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1954786492]
+environment = SubResource("Environment_workshop")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1930534455]
+script = ExtResource("1_vvh5c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="XROrigin3D" unique_id=763222209]
+transform = Transform3D(0.47561988, -0.87963074, 0.00598763, 0.4758077, 0.2629843, 0.8393131, -0.7398602, -0.39634496, 0.5436156, -0.026064396, 10.826873, 4.9670925)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1115225440]
+transform = Transform3D(0.26134694, 0, -0.96524495, 0, 1, 0, 0.96524495, 0, 0.26134694, -2.7153764, 0.36349773, -0.0031785965)
+
+[node name="Voodoo L" type="XRController3D" parent="XROrigin3D" unique_id=467892933]
+tracker = &"left_hand"
+script = ExtResource("2_jnlp7")
+
+[node name="Holder" type="Node3D" parent="XROrigin3D/Voodoo L" unique_id=1341899153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.1, -0.4)
+
+[node name="Voodoo R" type="XRController3D" parent="XROrigin3D" unique_id=959047932 node_paths=PackedStringArray("ray_cast", "doll_anchor")]
+tracker = &"right_hand"
+script = ExtResource("2_28aoi")
+ray_cast = NodePath("RayCast3D")
+doll_anchor = NodePath("../Voodoo L/Holder")
+
+[node name="RayCast3D" type="RayCast3D" parent="XROrigin3D/Voodoo R" unique_id=1219486521]
+target_position = Vector3(0, 0, -10)
+script = ExtResource("3_jnlp7")
+pointer_mesh = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/Voodoo R" unique_id=742508116]
+transform = Transform3D(0.033, 0, 0, 0, -1.09278474e-07, -0.033, 0, 2.5, -1.4424758e-09, 0, 0, -2.2)
+material_override = SubResource("StandardMaterial3D_pointer")
+mesh = SubResource("CapsuleMesh_l8v81")
+
+[node name="Cube" parent="XROrigin3D" unique_id=670087784 instance=ExtResource("5_bf3um")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5380006, 0.4817562, -2.4673607)
+
+[node name="Cube2" parent="XROrigin3D" unique_id=1299651772 instance=ExtResource("5_bf3um")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.3878298, 0.26196873, 1.1897359)
+
+[node name="Capsule" parent="XROrigin3D" unique_id=962568155 instance=ExtResource("6_huihk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1339831, 0.4817562, 2.6815834)
+
+[node name="Cylinder" parent="XROrigin3D" unique_id=1060210113 instance=ExtResource("7_tw3kd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.1339831, 0.4817562, -0.55259633)
+
+[node name="Ground" type="StaticBody3D" parent="XROrigin3D" unique_id=1946330317]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/Ground" unique_id=1928703208]
+transform = Transform3D(1, 0, 0, 0, 0.41683394, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_28aoi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/Ground" unique_id=1701714561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06291928, -0.010124922, 0.015564728)
+mesh = SubResource("PlaneMesh_jnlp7")
+surface_material_override/0 = SubResource("StandardMaterial3D_tw3kd")
+
+[node name="TutorialPanel" type="Label3D" parent="XROrigin3D" unique_id=1098889467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, -1.5)
+pixel_size = 0.0012
+modulate = Color(0.85, 0.95, 1, 1)
+text = "VOODOO WORKSHOP"
+font_size = 42
+outline_size = 8
+script = ExtResource("12_help")
+
+[node name="Table" type="StaticBody3D" parent="XROrigin3D" unique_id=203815966 groups=["Pickable"]]
+transform = Transform3D(1, 0, 0, 0, -0.057267834, -0.99835885, 0, 0.99835885, -0.057267834, -0.03156233, 0.75, -1.5751791)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/Table" unique_id=1916831101]
+shape = SubResource("BoxShape3D_huihk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/Table" unique_id=1274577689]
+mesh = SubResource("BoxMesh_tw3kd")
+surface_material_override/0 = SubResource("StandardMaterial3D_huihk")
+
+[node name="Sketchfab_Scene2" parent="." unique_id=800146226 instance=ExtResource("10_tw3kd")]
+transform = Transform3D(0.9999825, 0, 0.005916632, 0, 1, 0, -0.005916632, 0, 0.9999825, 5.0342917, 0, 0)
+
+[node name="Sketchfab_Scene3" parent="." unique_id=1150049677 instance=ExtResource("10_tw3kd")]
+transform = Transform3D(-0.99995434, -0.008185403, -0.0049217567, -0.008185503, 0.9999665, 0, 0.0049216, 4.0287123e-05, -0.99998784, -4.402722, 0, 0.019260883)
+
+[node name="Sketchfab_Scene4" parent="." unique_id=870790389 instance=ExtResource("10_tw3kd")]
+transform = Transform3D(0.0041013528, 3.3572844e-05, -0.9999915, -0.008185501, 0.99996644, 2.6324691e-12, 0.9999581, 0.008185434, 0.0041014953, 0.30496597, 0, 4.7576747)
+
+[node name="Sketchfab_Scene5" parent="." unique_id=1599347428 instance=ExtResource("10_tw3kd")]
+transform = Transform3D(0.0018152334, 1.4858968e-05, 0.9999984, -0.008185505, 0.9999667, 1.9128261e-11, -0.9999648, -0.008185487, 0.0018152948, 0.31633806, -0.031013012, -4.615982)
+
+[node name="Sketchfab_Scene7" parent="." unique_id=643262878 instance=ExtResource("15_blcw0")]
+transform = Transform3D(0.035204455, 0, -0.028029386, 0, 0.045, 0, 0.028029386, 0, 0.035204455, -4.2028503, -0.5052482, 2.9022973)
+
+[node name="Sketchfab_Scene8" parent="." unique_id=204349557 instance=ExtResource("16_50g4q")]
+transform = Transform3D(-0.2457142, 0, 0.34677023, 0, 0.42500007, 0, -0.34677023, 0, -0.2457142, -3.9988058, 0.24690276, 2.2562735)
+
+[node name="Sketchfab_Scene12" parent="." unique_id=1280108750 instance=ExtResource("21_uwexw")]
+transform = Transform3D(-0.00051660306, 0, 0.10499872, 0, 0.105, 0, -0.10499872, 0, -0.00051660306, -4.394881, 1.3201622, -0.010146737)
+
+[node name="Sketchfab_Scene14" parent="." unique_id=534581350 instance=ExtResource("22_8pgb7")]
+transform = Transform3D(-0.00065843225, 0, -0.014985542, 0, 0.015, 0, 0.014985542, 0, -0.00065843225, 4.6617217, 0.6803776, 2.1334443)
+
+[node name="Sketchfab_Scene16" parent="." unique_id=1687403826 instance=ExtResource("23_tilu5")]
+transform = Transform3D(3.44, 0, 0, 0, 3.44, 0, 0, 0, 3.44, -1.3273566, 0, -4.2537537)
+
+[node name="Sketchfab_Scene18" parent="." unique_id=661240619 instance=ExtResource("24_24xe2")]
+transform = Transform3D(0.573, 0, 0, 0, 0.95, 0, 0, 0, 0.45898062, 0.31326866, -2.6105766, -0.55692077)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=557544591]
+stream = ExtResource("25_ab83r")
+autoplay = true
