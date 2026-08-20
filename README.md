@@ -1,126 +1,187 @@
-<<<<<<< HEAD
-# Voodoo Workshop
+# 🪆 Voodoo Doll VR
 
-## Requirements
+### A miniature-proxy interaction technique for Virtual Reality
 
-- Godot 4.6.3
-- Godot OpenXR Vendors plugin 5.0 or newer
-- A compatible OpenXR runtime and headset
+Voodoo Doll VR is an experimental **VR interaction system built with Godot 4 and OpenXR**.
 
-The interaction itself is implemented entirely in GDScript using native Godot
-nodes. It requires no C++ modules or backend interaction addons. Inspector
-configuration is organized with `@export_group` and `@export_subgroup`.
+The project explores an alternative way of interacting with full-size objects in virtual environments. Instead of directly manipulating a distant object, the user selects it and receives a **miniature representation** in their hand.
 
-A beginner-friendly Godot 4 OpenXR prototype for customizing full-size objects
-through a miniature copy held in the player's hand.
+Changes made through the miniature are immediately reflected on the original object, allowing interaction at a more comfortable scale.
 
-## Controls
+## 🎥 Demo
 
-1. Right trigger selects an object.
-2. Right primary press/touch increases or decreases its size.
-3. Left trigger cycles through colors.
-4. Left primary finishes the selection.
+> Demo GIF/video coming soon.
 
-Size and color update on the miniature and real object immediately. Moving the
-controller does not move the real object.
+## ✨ Features
 
-## Code map
+* 🎯 Ray-based object selection
+* 🪆 Miniature proxy generation
+* 📏 Real-time object resizing
+* 🎨 Interactive color switching
+* 🔄 Immediate synchronization between miniature and original object
+* 🥽 OpenXR controller input
+* 🔦 Visual pointer feedback
+* 🎮 Multiple interactable 3D objects
 
-- `ObjectManager.gd` applies live size and color changes.
-- `RightHand.gd` selects objects and handles resizing.
-- `LeftHand.gd` changes color and finishes selection.
-=======
-# VirtualAndAugmentedEnvironments2026_SricharanSureshkumar_AsishChellamani
+## 🎮 Interaction
 
+The interaction is split between both VR controllers.
 
+| Input             | Action                         |
+| ----------------- | ------------------------------ |
+| **Right Trigger** | Select an object               |
+| **Right Primary** | Increase/decrease object size  |
+| **Left Trigger**  | Cycle through available colors |
+| **Left Primary**  | Finish the current selection   |
 
-## Getting started
+Size and color changes are applied simultaneously to the miniature representation and the original object.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 🧠 How It Works
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### 1. Select
 
-## Add your files
+The user points the right controller at an interactable object and presses the trigger.
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+### 2. Create Miniature
 
+A miniature representation of the selected object is created and presented within the user's interaction space.
+
+### 3. Modify
+
+The user can modify properties of the selected object through the VR controllers.
+
+The right controller handles resizing while the left controller handles color changes.
+
+### 4. Synchronize
+
+Changes made through the miniature representation are immediately applied to the corresponding full-size object.
+
+### 5. Finish
+
+The interaction can be completed using the left controller, returning the system to its selection state.
+
+## 🏗️ Architecture
+
+The interaction system is implemented in **GDScript** using native Godot nodes.
+
+```text
+VR / OpenXR
+     │
+     ├── RightHand.gd
+     │     ├── Object Selection
+     │     └── Object Resizing
+     │
+     ├── LeftHand.gd
+     │     ├── Color Switching
+     │     └── Finish Selection
+     │
+     ├── Pointer.gd
+     │     └── Ray Interaction
+     │
+     └── ObjectManager.gd
+           ├── Miniature Management
+           └── Live Object Updates
 ```
-cd existing_repo
-git remote add origin https://git.hs-schmalkalden.de/chellama/virtualandaugmentedenvironments2026_sricharansureshkumar_asishchellamani.git
-git branch -M main
-git push -uf origin main
+
+No custom C++ modules or external interaction frameworks are required for the core interaction system.
+
+## 🛠️ Tech Stack
+
+* **Godot 4.6.3**
+* **GDScript**
+* **OpenXR**
+* **Godot OpenXR Vendors Plugin**
+* **RayCast3D**
+* **3D Physics & Collision Detection**
+
+## 📁 Project Structure
+
+```text
+voodoo-doll-vr/
+│
+├── Assets/
+│   ├── Models/
+│   └── Textures/
+│
+├── Scripts/
+│   ├── HelpText.gd
+│   ├── LeftHand.gd
+│   ├── ObjectManager.gd
+│   ├── Pointer.gd
+│   ├── RightHand.gd
+│   └── VRSetup.gd
+│
+├── openxr_action_map.tres
+├── project.godot
+├── root.tscn
+└── README.md
 ```
 
-## Integrate with your tools
+## ⚙️ Requirements
 
-* [Set up project integrations](https://git.hs-schmalkalden.de/chellama/virtualandaugmentedenvironments2026_sricharansureshkumar_asishchellamani/-/settings/integrations)
+* Godot **4.6.3**
+* Godot OpenXR Vendors plugin **5.0 or newer**
+* OpenXR-compatible VR headset and runtime
 
-## Collaborate with your team
+## 🚀 Running the Project
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+1. Clone this repository.
 
-## Test and Deploy
+```bash
+git clone https://github.com/11Charan/voodoo-doll-vr.git
+```
 
-Use the built-in continuous integration in GitLab.
+2. Open **Godot 4.6.3**.
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+3. Import the repository's `project.godot`.
 
-***
+4. Make sure the required OpenXR runtime and Godot OpenXR Vendors plugin are available.
 
-# Editing this README
+5. Connect an OpenXR-compatible VR headset.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+6. Run the project from Godot.
 
-## Suggestions for a good README
+## 💡 Technical Challenges
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+Development involved solving several VR-specific problems, including:
 
-## Name
-Choose a self-explaining name for your project.
+* Reliable controller tracking
+* Ray-based object detection
+* Correct miniature scaling
+* Synchronizing properties between miniature and original objects
+* Managing duplicated nodes
+* Scene-tree parenting
+* Collision detection
+* OpenXR controller input handling
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+## 📚 Research
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+The interaction concept is inspired by research into **Voodoo Doll interaction techniques** for manipulating virtual objects across different scales:
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+* J. S. Pierce, B. C. Stearns and R. Pausch, *Voodoo Dolls: Seamless Interaction at Multiple Scales in Virtual Environments*, SI3D, 1999.
+* J. S. Pierce and R. Pausch, *Comparing Voodoo Dolls and HOMER: Exploring the Importance of Feedback in Virtual Environments*, 2002.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## 🙏 Asset Credits
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+The environment uses third-party assets from **Poly Haven** and **Sketchfab**.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Poly Haven assets used in the project are available under **CC0**.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Individual Sketchfab assets remain the work of their respective creators and are used under **Creative Commons Attribution 4.0 (CC BY 4.0)**. Appropriate attribution should be retained when redistributing these assets.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+The original licensed background music is **not distributed with this repository**.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## 🚀 Future Improvements
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Potential extensions include:
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+* Haptic feedback
+* Physics-based interaction
+* Object snapping
+* Additional object properties
+* Improved interaction feedback
+* Multiplayer support
 
-## License
-For open source projects, say how it is licensed.
+---
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
->>>>>>> de4848a6b13300dd57f8db458823b14d8b1707aa
+**Godot • OpenXR • GDScript • Virtual Reality • XR Interaction**
